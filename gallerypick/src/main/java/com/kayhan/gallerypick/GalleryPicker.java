@@ -1,19 +1,18 @@
 package com.kayhan.gallerypick;
 
 import android.Manifest;
-import android.app.Activity;
-import android.app.Fragment;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Build;
 import android.provider.MediaStore;
+import android.support.annotation.NonNull;
+import android.support.v4.app.Fragment;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 
 import java.io.ByteArrayOutputStream;
-
-import androidx.annotation.NonNull;
 
 
 public class GalleryPicker {
@@ -22,7 +21,7 @@ public class GalleryPicker {
     private static GalleryPicker galleryPicker;
     GalleryListener listener = null;
     Fragment fragment;
-    Activity activity;
+    AppCompatActivity activity;
     Uri selectedImage = null;
     Intent data;
     int size = 1000000000;
@@ -37,11 +36,11 @@ public class GalleryPicker {
         return galleryPicker;
     }
 
-    public Activity getActivity() {
+    public AppCompatActivity getActivity() {
         return activity;
     }
 
-    public void startGalleryIntent(Activity activity, Fragment fragment) {
+    public void startGalleryIntent(AppCompatActivity activity, Fragment fragment) {
         this.activity = activity;
         this.fragment = fragment;
         try {
