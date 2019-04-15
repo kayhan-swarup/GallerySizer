@@ -30,14 +30,14 @@ public class GalleryFragment extends Fragment implements GalleryListener {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.fragment_gallery,null);
+        View v = inflater.inflate(R.layout.fragment_gallery, null);
         button = v.findViewById(R.id.button);
-        text=v.findViewById(R.id.text);
-        imageView=v.findViewById(R.id.imageView);
+        text = v.findViewById(R.id.text);
+        imageView = v.findViewById(R.id.imageView);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                picker.startGalleryIntent(getActivity(),GalleryFragment.this);
+                picker.startGalleryIntent(getActivity(), GalleryFragment.this);
 
             }
         });
@@ -49,14 +49,14 @@ public class GalleryFragment extends Fragment implements GalleryListener {
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        picker.onRequestPermissionsResult(requestCode,permissions,grantResults);
+        picker.onRequestPermissionsResult(requestCode, permissions, grantResults);
     }
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        picker.onResult(requestCode,resultCode,data,size);
-        if (requestCode==GalleryPicker.REQUEST_GALLERY) {
+        picker.onResult(requestCode, resultCode, data, size);
+        if (requestCode == GalleryPicker.REQUEST_GALLERY) {
 
         }
     }
@@ -70,6 +70,6 @@ public class GalleryFragment extends Fragment implements GalleryListener {
     @Override
     public void onByteArrayCreated(byte[] bytes) {
 
-        text.setText("Compress to : "+bytes.length);
+        text.setText("Compress to : " + bytes.length);
     }
 }
