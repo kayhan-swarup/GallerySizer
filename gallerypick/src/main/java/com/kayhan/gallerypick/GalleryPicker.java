@@ -2,6 +2,7 @@ package com.kayhan.gallerypick;
 
 import android.Manifest;
 import android.app.Activity;
+import android.app.Fragment;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
@@ -13,7 +14,8 @@ import android.util.Log;
 import java.io.ByteArrayOutputStream;
 
 import androidx.annotation.NonNull;
-import androidx.fragment.app.Fragment;
+import androidx.appcompat.app.AppCompatActivity;
+
 
 public class GalleryPicker {
 
