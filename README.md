@@ -19,12 +19,13 @@ Add the dependency to your build.gradle:
   
 Inside your fragment call the method  startGalleryIntent() on user action:		
 
-		GalleryPicker picker = GalleryPicker.getInstance();
+		int size = 5000000;
+		GalleryPicker picker = GalleryPicker.getInstance(size);
 		picker.startGalleryIntent(((MainActivity)getActivity()), GalleryFragment.this);
 
 And last but not the least... inside the onActivityResult method add this line:		
 
-		picker.onResult(requestCode, resultCode, data, size);
+		picker.onResult(requestCode, resultCode, data);
 
         
         
